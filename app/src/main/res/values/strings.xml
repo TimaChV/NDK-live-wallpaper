@@ -1,0 +1,10 @@
+<resources>
+    <!-- General strings -->
+    <string name="app_name">Lwp Test</string>
+    <string name="description">Test live wallpaper</string>
+    <string name="welcome">Welcome</string>
+    <string name="apply">Apply</string>
+
+
+</resources>
+

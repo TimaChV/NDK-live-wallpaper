@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.android.gl2jni"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 4
+        versionName "1.1"
+        externalNativeBuild {
+            //cmake {
+            //    arguments '-DANDROID_STL=c++_static'
+            //}
+            ndkBuild {
+                arguments "NDK_APPLICATION_MK:=src/main/cpp/Application.mk", "APP_PLATFORM:=android-16", "-j8"
+                abiFilters "armeabi-v7a", "x86"
+            }
+        }
+    }
+
+
+    buildTypes {
+        release {
+            shrinkResources false
+            debuggable false
+            jniDebuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            jniDebuggable true
+            minifyEnabled false
+        }
+    }
+    externalNativeBuild {
+        //cmake {
+        //    path "src/main/cpp/CMakeLists.txt"
+        //}
+        ndkBuild {
+            path "src/main/cpp/Android.mk"
+        }
+    }
+    buildToolsVersion '27.0.3'
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-annotations:27.1.1'
+}
