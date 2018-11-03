@@ -1,6 +1,5 @@
 
 package com.android.gl2jni;
-import android.content.res.AssetManager;
 
 // Wrapper for native library
 

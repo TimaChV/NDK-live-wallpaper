@@ -11,8 +11,6 @@ public class MyRenderer implements GLSurfaceView.Renderer {
     private Context context;
     private static final String TAG = "lwp";
     private boolean rend_ready = false;
-    //GL10 _gl;// save gl context
-    //static public Object lock = new Object();
 
 
     public MyRenderer(Context context_){

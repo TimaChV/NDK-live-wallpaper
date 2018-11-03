@@ -25,8 +25,8 @@ public class MyService extends GLWallpaperService {
     @Override
     public void onDestroy() { // service onDestroy()
         super.onDestroy();
-
         Log.d(TAG, "MyService.onDestroy()");
+        //GL2JNILib.dispose();
     }
 
 
@@ -57,11 +57,14 @@ public class MyService extends GLWallpaperService {
                 @Override
                 public void run() {
                     //GL2JNILib.dispose();
-                    if(renderer != null) renderer.dispose();
+                    if(renderer != null) {
+                        renderer.dispose();
+                        renderer = null;
+                    }
                 }
             });
 
-            renderer = null;
+
             super.onDestroy();
         }
 

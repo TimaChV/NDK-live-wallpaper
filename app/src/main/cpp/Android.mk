@@ -8,9 +8,10 @@ LOCAL_MODULE    := libnative-lib
 LOCAL_CFLAGS    := -Werror -DKTX_OPENGL_ES2=1
 
 LOCAL_SRC_FILES :=  native-lib.cpp \
+                    gl_util.cpp \
 
 				
-LOCAL_LDLIBS    := -llog -lGLESv2 -landroid -lz
+LOCAL_LDLIBS    := -llog -lGLESv2 -landroid -lz # -lGLESv3 # -lEGL
 
 LOCAL_STATIC_LIBRARIES := $(STATICLIBS)
 
